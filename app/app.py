@@ -1,6 +1,4 @@
-"""
-This module provides utility functions for data processing.
-"""
+"""Flask application for the calculator web interface."""
 
 from flask import Flask, render_template, request
 from .calculadora import sumar, restar, multiplicar, dividir
@@ -10,6 +8,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    """Render the calculator page and process submitted operations."""
     resultado = None
     if request.method == "POST":
         try:
